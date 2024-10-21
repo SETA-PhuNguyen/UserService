@@ -1,0 +1,16 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8088/realms/${keycloak.realm}
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+keycloak:
+  server-url: http://localhost:8088
+  realm: cloud-storage-realm
+  client-id: s3-storage-app
+
+credentials:
+  username: admin
+  password: 123
